@@ -1,5 +1,5 @@
 /*
- * Ex19.java
+ * Ex20.java
  * 
  * Copyright 2022 Mariana Alves <Mariana Alves@DESKTOP-BDG0JMS>
  * 
@@ -21,33 +21,36 @@
  * 
  */
 
+
 import java.util.Scanner;
 
-public class Ex19 {
+public class Ex20 {
 	
 	public static void main (String[] args) {
 		
 		Scanner read = new Scanner(System.in);
-		char choose;
-		double valor_mercadoria = 0;
-		int qtd_mercadoria = 0;
 		
-		do
+		int menor = Integer.MAX_VALUE;
+		int maior = Integer.MIN_VALUE;
+		
+		for(int i = 0; i < 100; i++)
 		{
-			System.out.print("Informe o valor da mercadoria: ");			
-			valor_mercadoria += read.nextDouble();
-			qtd_mercadoria++;
+			System.out.println("Digite um valor: ");
+			int num = read.nextInt();
 			
-			System.out.println("MAIS MERCADORIA (S/N)? ");
-			String escolha = read.next();
-			escolha = escolha.toUpperCase();
-			choose = escolha.charAt(0);
+			if(num > maior)
+			{
+				maior = num;
+			}
 			
-		}while(choose != 'N');
+			if(num < menor)
+			{
+				menor = num;
+			}
+		}
 		
-		double media = valor_mercadoria/qtd_mercadoria;
-		
-		System.out.println("A média dos produtos é " + media);
-		
+		System.out.println("Maior valor informado: " + maior + "\n"+
+						   "Menor valor informado: " + menor);
 	}
 }
+
