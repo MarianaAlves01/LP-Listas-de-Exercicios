@@ -1,5 +1,5 @@
 /*
- * Argumentos.java
+ * Ex41.java
  * 
  * Copyright 2022 Mariana Alves <Mariana Alves@DESKTOP-BDG0JMS>
  * 
@@ -21,20 +21,28 @@
  * 
  */
 
+import java.util.Scanner;
 
-public class Argumentos {
+public class Ex41 {
 	
 	public static void main (String[] args) {
+		Scanner read = new Scanner (System.in);
 		
-		System.out.println(" ");
-		for(int i = 0; i < args.length; i++)
-			System.out.println(args[i]);
+		System.out.print("Insira um numero para executar a fatorial: ");
+		int num = read.nextInt();
+		
+		int result = 1;
+		
+		for(int i = num; i >= 1; i--)
+		{
+			System.out.print(i + " ");
+			
+			result *= i;
+		}
+		 
+		System.out.print("= " + result);
 		
 		
-		//executar no cmd:
-		// cd caminho\da\pasta\
-		// javac NomeDaClasse.java
-		// java NomeDaClasse argumento1 argumento2
 	}
 }
 

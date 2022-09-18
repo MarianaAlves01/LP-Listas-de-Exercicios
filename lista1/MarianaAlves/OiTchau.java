@@ -21,13 +21,13 @@
  * 
  */
 
-
-public class OiTchau {
-	
-	public static void main (String[] args) {
-		
-		String oi	 
-		
+class Oi{
+	public static void main (String[] args){
+		System.out.println("Oi");
 	}
 }
-
+class Tchau{
+	public static void main (String[] args){
+		System.out.println("Tchau");
+	}
+}

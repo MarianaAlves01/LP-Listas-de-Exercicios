@@ -1,5 +1,5 @@
 /*
- * Argumentos.java
+ * Ex43.java
  * 
  * Copyright 2022 Mariana Alves <Mariana Alves@DESKTOP-BDG0JMS>
  * 
@@ -21,20 +21,34 @@
  * 
  */
 
+import java.util.Scanner;
 
-public class Argumentos {
+public class Ex43 {
 	
 	public static void main (String[] args) {
 		
-		System.out.println(" ");
-		for(int i = 0; i < args.length; i++)
-			System.out.println(args[i]);
+		Scanner read = new Scanner(System.in);
 		
-		
-		//executar no cmd:
-		// cd caminho\da\pasta\
-		// javac NomeDaClasse.java
-		// java NomeDaClasse argumento1 argumento2
+		for(int i = 1; i <= 7; i++)
+		{
+			System.out.print("Insira o " + i + "º valor: ");
+			int num = read.nextInt();
+			
+			int result = 1;
+			
+			for(int j = num; j >= 1; j--)
+			{
+				System.out.print(j + " ");
+				
+				result *= j;
+			}
+			 
+			System.out.print("= " + result);
+			
+			//espaçamento
+			System.out.println("");
+			System.out.println("");
+		}
 	}
 }
 

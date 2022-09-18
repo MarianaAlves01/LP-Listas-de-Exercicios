@@ -25,29 +25,28 @@
 public class Ex30 {
 	
 	public static void main (String[] args) {
-		for(int i = 1; i <= 10; i ++)
+		
+		for(int i = 1; i < 11; i++)
 		{
-			System.out.print(i + ", ");
+			System.out.print(i + ",");
 			
-			for(int j = 1; j <= 20; j++)
+			if(i%2 == 0)
 			{
-				if(i % 2 == 0)
+				for(int j = 2; j <= i * 2; j += 2)
 				{
-					if(j % 2 == 0)
-					{
-						System.out.print(j + " ");
-					}
-				}
-				else
-				{
-					if(j % 2 != 0)
-					{
-						System.out.print(j + " ");
-					}
+					System.out.print(" " + j);	
 				}
 			}
 			
-			System.out.println(" ");
+			else
+			{
+				for(int j = 1; j <= i * 2; j += 2)
+				{
+					System.out.print(" " + j);	
+				}
+			}
+			
+			System.out.println("");
 		}
 	}
 }

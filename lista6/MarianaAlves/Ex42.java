@@ -1,5 +1,5 @@
 /*
- * Argumentos.java
+ * Ex42.java
  * 
  * Copyright 2022 Mariana Alves <Mariana Alves@DESKTOP-BDG0JMS>
  * 
@@ -22,19 +22,26 @@
  */
 
 
-public class Argumentos {
+public class Ex42 {
 	
 	public static void main (String[] args) {
 		
-		System.out.println(" ");
-		for(int i = 0; i < args.length; i++)
-			System.out.println(args[i]);
-		
-		
-		//executar no cmd:
-		// cd caminho\da\pasta\
-		// javac NomeDaClasse.java
-		// java NomeDaClasse argumento1 argumento2
+		for(int i = 1; i <= 10; i++)
+		{
+			int result = 1;
+			
+			for(int j = i; j >= 1; j--)
+			{
+				System.out.print(j + " ");
+				
+				result *= j;
+			}
+			 
+			System.out.print("= " + result);
+			
+			//espaçamento
+			System.out.println("");
+		}
 	}
 }
 

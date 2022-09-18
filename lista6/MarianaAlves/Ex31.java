@@ -1,5 +1,5 @@
 /*
- * Argumentos.java
+ * Ex31.java
  * 
  * Copyright 2022 Mariana Alves <Mariana Alves@DESKTOP-BDG0JMS>
  * 
@@ -21,20 +21,30 @@
  * 
  */
 
+import java.util.Scanner;
 
-public class Argumentos {
+public class Ex31 {
 	
 	public static void main (String[] args) {
-		
-		System.out.println(" ");
-		for(int i = 0; i < args.length; i++)
-			System.out.println(args[i]);
+		Scanner read = new Scanner (System.in);
 		
 		
-		//executar no cmd:
-		// cd caminho\da\pasta\
-		// javac NomeDaClasse.java
-		// java NomeDaClasse argumento1 argumento2
+		System.out.print("Insira a qtd de termos: ");
+		int qtd_termos = read.nextInt();
+		
+		if(qtd_termos < 0)
+		{
+			System.out.print("Valor inválido. Insita outro: ");
+			qtd_termos = read.nextInt();
+		}
+		
+		
+		for(int i = 1; i <= qtd_termos; i++)
+		{	
+			System.out.print(i + " ");
+		}
+		
+		
 	}
 }
 
