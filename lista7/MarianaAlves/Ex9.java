@@ -1,5 +1,5 @@
 /*
- * Ex7.java
+ * Ex9.java
  * 
  * Copyright 2022 Mariana Alves <Mariana Alves@DESKTOP-BDG0JMS>
  * 
@@ -23,39 +23,27 @@
 
 import java.util.Scanner;
 
-public class Ex7 {
+public class Ex9 {
 	
 	public static void main (String[] args) {
 		Scanner read = new Scanner(System.in);
+
+		System.out.print("Informe uma frase: ");
+		String quote = read.nextLine();
+
+		int cont = 0; // contador de vezes que o espaco em branco ocorre na frase
+		int n = quote.length(); // tamanho da cadeia
 		
-		int[] qtd = new int [26];
-		
-		//zerando todos os valores do array
-		for(int a = 0; a < 26; a++)
+		for (int i = 0; i < n; i++) 
 		{
-			qtd[a] = 0;
-		}
-		
-		System.out.print("insira uma frase: ");
-		String quote = read.nextLine().toUpperCase();
-		
-		
-		for(int i = 97; i < 123; i++)
-		{
-			for(int j = 0; j < quote.length(); j++)
+			if (quote.charAt(i) == ' ')
 			{
-				
-				if(quote.charAt(j) == (char)(i - 32))
-				{
-					qtd[i - 97]++;
-				}
+				cont++;
 			}
 		}
-		
-		for(int i = 0; i < 26; i++)
-		{
-			System.out.printf("%c: %d |", (char) (i + 65), qtd[i]);
-		}
+
+		System.out.printf("\nExistem %d espacos em branco na frase.\n", cont);
 	}
 }
+
 

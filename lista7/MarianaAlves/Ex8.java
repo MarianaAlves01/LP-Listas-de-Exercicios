@@ -1,5 +1,5 @@
 /*
- * Ex7.java
+ * Ex8.java
  * 
  * Copyright 2022 Mariana Alves <Mariana Alves@DESKTOP-BDG0JMS>
  * 
@@ -20,42 +20,13 @@
  * 
  * 
  */
-
 import java.util.Scanner;
 
-public class Ex7 {
+public class Ex8 {
 	
 	public static void main (String[] args) {
 		Scanner read = new Scanner(System.in);
-		
-		int[] qtd = new int [26];
-		
-		//zerando todos os valores do array
-		for(int a = 0; a < 26; a++)
-		{
-			qtd[a] = 0;
-		}
-		
-		System.out.print("insira uma frase: ");
-		String quote = read.nextLine().toUpperCase();
-		
-		
-		for(int i = 97; i < 123; i++)
-		{
-			for(int j = 0; j < quote.length(); j++)
-			{
-				
-				if(quote.charAt(j) == (char)(i - 32))
-				{
-					qtd[i - 97]++;
-				}
-			}
-		}
-		
-		for(int i = 0; i < 26; i++)
-		{
-			System.out.printf("%c: %d |", (char) (i + 65), qtd[i]);
-		}
+
 	}
 }
 
