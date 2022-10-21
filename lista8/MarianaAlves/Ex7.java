@@ -1,5 +1,5 @@
 /*
- * Ex23.java
+ * Ex7.java
  * 
  * Copyright 2022 Mariana Alves <Mariana Alves@DESKTOP-BDG0JMS>
  * 
@@ -20,27 +20,58 @@
  * 
  * 
  */
+
+
 import java.util.Scanner;
 
-public class Ex23 
+public class Ex7 
 {	
 	public static void main (String[] args) 
-	{
+	{	
 		Scanner read = new Scanner (System.in);
+		int pos, maior = 0, menor = Integer.MAX_VALUE;
 		
-		System.out.print("insira seu nome completo: ");
-		String quote = read.nextLine();
 		
-		String [] palavras = quote.split(" ");
-		String ultimo = palavras[palavras.length - 1];
+		do
+		{
+			System.out.print("Quantidade de posições [1 - 20]: ");
+			pos = read.nextInt();
+			
+			//espaçamento
+			System.out.println(" ");
+			
+		}while(pos > 20 || pos < 1);
+		
+		
+		//criando vetor
+		int [] vetorD = new int [pos];
+		
+		
+		//obtendo os elementos
+		for(int i = 0; i < vetorD.length; i++)
+		{
+			System.out.printf("Valor do índice nº %d = ", i+1);
+			vetorD[i] = read.nextInt();
+		}
 		
 		//espaçamento
-		System.out.println("");
+		System.out.println(" ");
+			
 		
+		//obtendo o maior e menor elementos
+		for(int i = 0; i < pos; i++)
+		{
+			if(vetorD[i] < menor)
+			{
+				menor = vetorD[i];
+			}
+			if(vetorD[i] > maior)
+			{
+				maior = vetorD[i];
+			}
+		}
 		
-		System.out.println(ultimo);
-		
+		System.out.printf("Maior valor = %d \nMenor valor = %d", maior, menor);
 		
 	}
 }
-

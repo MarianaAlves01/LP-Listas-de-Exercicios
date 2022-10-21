@@ -1,5 +1,5 @@
 /*
- * Ex23.java
+ * Ex9.java
  * 
  * Copyright 2022 Mariana Alves <Mariana Alves@DESKTOP-BDG0JMS>
  * 
@@ -20,27 +20,48 @@
  * 
  * 
  */
+
 import java.util.Scanner;
 
-public class Ex23 
+public class Ex9 
 {	
 	public static void main (String[] args) 
-	{
+	{	
 		Scanner read = new Scanner (System.in);
 		
-		System.out.print("insira seu nome completo: ");
-		String quote = read.nextLine();
+		int cont = 0;
 		
-		String [] palavras = quote.split(" ");
-		String ultimo = palavras[palavras.length - 1];
+		//criando vetor
+		int [] vetorG = new int [5];
+		int[] vetorH = new int[vetorG.length];
+		
+		
+		//obtendo os elementos
+		for(int i = 0; i < vetorG.length; i++)
+		{
+			System.out.printf("Valor do índice nº %d = ", i+1);
+			vetorG[i] = read.nextInt();
+		}
 		
 		//espaçamento
-		System.out.println("");
+		System.out.println(" ");
 		
+		//identificando e inserindo os números pares no H
+		for (int n : vetorG) 
+		{ 
+			// usando enhanced for
+			if (n % 2 == 0) 
+			{
+				vetorH[cont] = n;
+				cont++;
+			}
+		}
 		
-		System.out.println(ultimo);
-		
-		
+		//exibindo
+		System.out.println("Os números pares são:");
+		for (int i = 0; i < cont; i++) 
+		{
+			System.out.printf("%d ", vetorH[i]);
+		}
 	}
 }
-

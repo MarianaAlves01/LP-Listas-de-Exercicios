@@ -1,5 +1,5 @@
 /*
- * Ex23.java
+ * Ex10.java
  * 
  * Copyright 2022 Mariana Alves <Mariana Alves@DESKTOP-BDG0JMS>
  * 
@@ -20,26 +20,48 @@
  * 
  * 
  */
+
+
+import java.util.Arrays;
 import java.util.Scanner;
 
-public class Ex23 
-{	
+public class Ex10 {
+	
 	public static void main (String[] args) 
 	{
 		Scanner read = new Scanner (System.in);
 		
-		System.out.print("insira seu nome completo: ");
-		String quote = read.nextLine();
+		//criando vetores
+		int [] PA = new int [5];
+		int [] PB = new int [5];
+		int [] PC = new int [10];
 		
-		String [] palavras = quote.split(" ");
-		String ultimo = palavras[palavras.length - 1];
+		
+		//obtendo os elementos do A
+		for(int i = 0; i < 5; i++)
+		{
+			System.out.printf("VETOR A - índice nº %d = \n", i+1);
+			PA[i] = read.nextInt();	
+		}
+		
 		
 		//espaçamento
-		System.out.println("");
+		System.out.println(" ");
 		
 		
-		System.out.println(ultimo);
+		//obtendo os elementos do B
+		for(int i = 0; i < 5; i++)
+		{
+			System.out.printf("VETOR B - índice nº %d = \n", i+1);
+			PB[i] = read.nextInt();
+		}
 		
+		
+		
+		System.arraycopy(PA, 0, PC, 0, 5);
+        System.arraycopy(PB, 0, PC, 5, 5);
+
+        System.out.println(Arrays.toString(PC));
 		
 	}
 }

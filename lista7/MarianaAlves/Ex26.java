@@ -1,5 +1,5 @@
 /*
- * Ex23.java
+ * Ex26.java
  * 
  * Copyright 2022 Mariana Alves <Mariana Alves@DESKTOP-BDG0JMS>
  * 
@@ -20,27 +20,58 @@
  * 
  * 
  */
+import java.util.Random;
 import java.util.Scanner;
 
-public class Ex23 
-{	
+public class Ex26 
+{
 	public static void main (String[] args) 
 	{
-		Scanner read = new Scanner (System.in);
 		
-		System.out.print("insira seu nome completo: ");
-		String quote = read.nextLine();
+		String letras = "";
 		
-		String [] palavras = quote.split(" ");
-		String ultimo = palavras[palavras.length - 1];
-		
-		//espaçamento
-		System.out.println("");
-		
-		
-		System.out.println(ultimo);
+		int[] qtd = new int [26];
+		//zerando todos os valores do array
+		for(int a = 0; a < 26; a++)
+		{
+			qtd[a] = 0;
+		}
 		
 		
+		for(int i = 1; i <= 100; i++)
+		{
+			int r = new Random().nextInt((122 - 97) + 1) + 97;
+			letras += (char) r;
+		}
+		
+		letras = letras.toUpperCase();
+		
+		//reconhecendo as letras que não aparecem
+		for(int j = 97; j < 123; j++)
+		{
+			for(int k = 0; k < letras.length(); k++)
+			{
+				if(letras.charAt(k) == (char)(j - 32))
+				{
+					qtd[j - 97]++;
+				}
+			}
+		}
+		
+		
+		//letras que não aparecem
+		System.out.print("Letras que não aparecem: ");
+		
+		for(int i = 0; i < 26; i++)
+		{
+			if(qtd[i] == 0)
+			{
+				System.out.printf("%c ", (char) (i + 65));
+			}
+			
+		}
+	
+		System.out.print("\n\n" + letras);
 	}
 }
 

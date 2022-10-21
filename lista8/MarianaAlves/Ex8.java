@@ -1,5 +1,5 @@
 /*
- * Ex23.java
+ * Ex8.java
  * 
  * Copyright 2022 Mariana Alves <Mariana Alves@DESKTOP-BDG0JMS>
  * 
@@ -20,27 +20,43 @@
  * 
  * 
  */
+
+
 import java.util.Scanner;
 
-public class Ex23 
+public class Ex8 
 {	
 	public static void main (String[] args) 
-	{
+	{	
 		Scanner read = new Scanner (System.in);
+
+		int soma = 0;
 		
-		System.out.print("insira seu nome completo: ");
-		String quote = read.nextLine();
+		//criando vetor
+		int [] vetorF = new int [5];
 		
-		String [] palavras = quote.split(" ");
-		String ultimo = palavras[palavras.length - 1];
+		
+		//obtendo os elementos
+		for(int i = 0; i < vetorF.length; i++)
+		{
+			System.out.printf("Valor do índice nº %d = ", i+1);
+			vetorF[i] = read.nextInt();
+		}
 		
 		//espaçamento
-		System.out.println("");
+		System.out.println(" ");
+			
 		
+		//exibindo os elementos
+		for(int i = 0; i < vetorF.length; i++)
+		{
+			if(vetorF[i] % 2 != 0)
+			{
+				soma += vetorF[i];
+			}
+		}
 		
-		System.out.println(ultimo);
-		
+		System.out.print((soma != 0)?"A soma dos números ímpares é " + soma : "Números ímpares não foram encontrados.");
 		
 	}
 }
-

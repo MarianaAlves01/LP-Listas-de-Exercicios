@@ -1,5 +1,5 @@
 /*
- * Ex23.java
+ * Ex3.java
  * 
  * Copyright 2022 Mariana Alves <Mariana Alves@DESKTOP-BDG0JMS>
  * 
@@ -20,26 +20,39 @@
  * 
  * 
  */
+
+
 import java.util.Scanner;
 
-public class Ex23 
+public class Ex3 
 {	
 	public static void main (String[] args) 
-	{
+	{	
 		Scanner read = new Scanner (System.in);
+
+		System.out.print("Quantidade de posições [1 - 20]: ");
+		int pos = read.nextInt();
 		
-		System.out.print("insira seu nome completo: ");
-		String quote = read.nextLine();
+		//criando vetor
+		int []vetor = new int [pos];
 		
-		String [] palavras = quote.split(" ");
-		String ultimo = palavras[palavras.length - 1];
+		
+		//obtendo os elementos
+		for(int i = 0; i < vetor.length; i++)
+		{
+			System.out.printf("Valor do índice nº %d = ", i+1);
+			vetor[i] = read.nextInt();
+		}
 		
 		//espaçamento
-		System.out.println("");
+		System.out.println(" ");
+			
 		
-		
-		System.out.println(ultimo);
-		
+		//exibindo os elementos
+		for(int i = 0; i < pos; i++)
+		{
+			System.out.printf("Indice nº %d = %d \n", i+1, vetor[i]);
+		}
 		
 	}
 }

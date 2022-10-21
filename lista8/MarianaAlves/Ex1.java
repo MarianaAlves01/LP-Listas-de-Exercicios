@@ -1,5 +1,5 @@
 /*
- * Ex23.java
+ * Ex1.java
  * 
  * Copyright 2022 Mariana Alves <Mariana Alves@DESKTOP-BDG0JMS>
  * 
@@ -20,27 +20,28 @@
  * 
  * 
  */
-import java.util.Scanner;
 
-public class Ex23 
+
+import java.lang.Math;
+
+public class Ex1 
 {	
 	public static void main (String[] args) 
 	{
-		Scanner read = new Scanner (System.in);
+		int vetorA []  = new int[15];	
 		
-		System.out.print("insira seu nome completo: ");
-		String quote = read.nextLine();
+		//inserindo 15 números aleatórios no vetor
+		for(int i = 0; i < 15; i++)
+		{ 
+			vetorA[i] = (int) (Math.random() * 10 - 1 + 1) + 1;
+		}
 		
-		String [] palavras = quote.split(" ");
-		String ultimo = palavras[palavras.length - 1];
-		
-		//espaçamento
-		System.out.println("");
-		
-		
-		System.out.println(ultimo);
-		
-		
+		//exibindo os valores
+		for(int i = 0; i < 15; i++)
+		{
+			System.out.printf("Indice nº %d = %d \n", i+1, vetorA[i]);
+		}
 	}
 }
+
 

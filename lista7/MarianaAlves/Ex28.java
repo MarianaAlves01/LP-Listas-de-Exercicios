@@ -1,5 +1,5 @@
 /*
- * Ex23.java
+ * Ex28.java
  * 
  * Copyright 2022 Mariana Alves <Mariana Alves@DESKTOP-BDG0JMS>
  * 
@@ -20,26 +20,11 @@
  * 
  * 
  */
-import java.util.Scanner;
 
-public class Ex23 
-{	
-	public static void main (String[] args) 
-	{
-		Scanner read = new Scanner (System.in);
-		
-		System.out.print("insira seu nome completo: ");
-		String quote = read.nextLine();
-		
-		String [] palavras = quote.split(" ");
-		String ultimo = palavras[palavras.length - 1];
-		
-		//espaçamento
-		System.out.println("");
-		
-		
-		System.out.println(ultimo);
-		
+
+public class Ex28 {
+	
+	public static void main (String[] args) {
 		
 	}
 }

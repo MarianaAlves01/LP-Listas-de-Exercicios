@@ -1,5 +1,5 @@
 /*
- * Ex23.java
+ * Ex24.java
  * 
  * Copyright 2022 Mariana Alves <Mariana Alves@DESKTOP-BDG0JMS>
  * 
@@ -20,26 +20,41 @@
  * 
  * 
  */
+
 import java.util.Scanner;
 
-public class Ex23 
-{	
+public class Ex24 
+{
 	public static void main (String[] args) 
-	{
+	{	
 		Scanner read = new Scanner (System.in);
 		
-		System.out.print("insira seu nome completo: ");
-		String quote = read.nextLine();
+		System.out.print("Insira uma sequencia de 0 e 1: ");
+		String sequencia = read.nextLine();
 		
-		String [] palavras = quote.split(" ");
-		String ultimo = palavras[palavras.length - 1];
-		
-		//espaçamento
-		System.out.println("");
+		int cont = 0; // conta um sequencia consecutiva de 1's
+		int maior = 0; // maior sequencia consecutiva de 1's
+		int len = sequencia.length(); // tamanho da cadeia
 		
 		
-		System.out.println(ultimo);
-		
+		for(int i = 0; i < len; i++)
+		{
+			cont = 0;
+			
+			while ((i < len) && (sequencia.charAt(i) == '1')) 
+			{
+				cont++;
+				i++;
+			}
+
+			if (cont > maior)
+			{	
+				maior = cont;
+			}
+		}
+
+      System.out.printf("\nA maior seqüência consecutiva foi de %d vez(es) o '1'.\n", maior);
+    
 		
 	}
 }

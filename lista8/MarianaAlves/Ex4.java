@@ -1,5 +1,5 @@
 /*
- * Ex23.java
+ * Ex4.java
  * 
  * Copyright 2022 Mariana Alves <Mariana Alves@DESKTOP-BDG0JMS>
  * 
@@ -20,27 +20,47 @@
  * 
  * 
  */
+ 
 import java.util.Scanner;
 
-public class Ex23 
+public class Ex4 
 {	
 	public static void main (String[] args) 
-	{
+	{	
 		Scanner read = new Scanner (System.in);
+		int pos;
 		
-		System.out.print("insira seu nome completo: ");
-		String quote = read.nextLine();
+		do
+		{
+			System.out.print("Quantidade de posições [1 - 20]: ");
+			pos = read.nextInt();
+			
+			//espaçamento
+			System.out.println(" ");
+			
+		}while(pos > 20 || pos < 1);
 		
-		String [] palavras = quote.split(" ");
-		String ultimo = palavras[palavras.length - 1];
+		
+		//criando vetor
+		int [] vetorD = new int [pos];
+		
+		
+		//obtendo os elementos
+		for(int i = 0; i < vetorD.length; i++)
+		{
+			System.out.printf("Valor do índice nº %d = ", i+1);
+			vetorD[i] = read.nextInt();
+		}
 		
 		//espaçamento
-		System.out.println("");
+		System.out.println(" ");
+			
 		
-		
-		System.out.println(ultimo);
-		
+		//exibindo os elementos
+		for(int i = 0; i < pos; i++)
+		{
+			System.out.printf("Indice nº %d = %d \n", i+1, vetorD[i]);
+		}
 		
 	}
 }
-

@@ -1,5 +1,5 @@
 /*
- * Ex23.java
+ * Ex27.java
  * 
  * Copyright 2022 Mariana Alves <Mariana Alves@DESKTOP-BDG0JMS>
  * 
@@ -20,27 +20,32 @@
  * 
  * 
  */
+
 import java.util.Scanner;
 
-public class Ex23 
+public class Ex27 
 {	
 	public static void main (String[] args) 
 	{
-		Scanner read = new Scanner (System.in);
+		Scanner read = new Scanner(System.in);
 		
-		System.out.print("insira seu nome completo: ");
-		String quote = read.nextLine();
+		System.out.print("Insira uma palavra: ");
+		String first_word = read.nextLine();
 		
-		String [] palavras = quote.split(" ");
-		String ultimo = palavras[palavras.length - 1];
+		System.out.print("Insira mais uma palavra: ");
+		String secound_word = read.nextLine();
 		
-		//espaçamento
-		System.out.println("");
-		
-		
-		System.out.println(ultimo);
-		
-		
+		if(first_word.length() != secound_word.length())
+		{
+			System.out.print("Erro! Entradas de tamanhos diferentes.");
+		}
+		else
+		{
+			for(int i = 0; i < first_word.length();i++)
+			{
+				System.out.printf("%c%c", first_word.charAt(i), secound_word.charAt(i));
+			}
+		}
 	}
 }
 

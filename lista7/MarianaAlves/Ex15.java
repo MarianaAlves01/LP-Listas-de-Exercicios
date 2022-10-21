@@ -29,7 +29,7 @@ public class Ex15
 	{
 		Scanner read = new Scanner (System.in);
 		
-		System.out.print("insira um frase: ");
+		System.out.print("insira uma frase: ");
 		String quote = read.nextLine();
 		
 		int cont = 0;
