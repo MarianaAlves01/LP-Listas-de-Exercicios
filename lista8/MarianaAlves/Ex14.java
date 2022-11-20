@@ -1,5 +1,5 @@
 /*
- * Ex10.java
+ * Ex14.java
  * 
  * Copyright 2022 Mariana Alves <Mariana Alves@DESKTOP-BDG0JMS>
  * 
@@ -23,62 +23,61 @@
 
 import java.util.Scanner;
 
-public class Ex10 {
-	
+public class Ex14 
+{	
 	public static void main (String[] args) 
 	{
 		Scanner read = new Scanner (System.in);
 		
-		//criando vetores
-		int [] PA = new int [5];
-		int [] PB = new int [5];
-		int [] PC = new int [10];
-		
 		//variáveis
-		int aux = 0;
-		int auxtwo = 0;
-		
-		//obtendo os elementos do A
-		for(int i = 0; i < 5; i++)
-		{
-			System.out.printf("VETOR A - índice nº %d = \n", i+1);
-			PA[i] = read.nextInt();	
-		}
+		int j = 0, k = 0, m = 0, a = 10, b = 15;
 		
 		
-		//espaçamento
-		System.out.println(" ");
+		//criando vetores
+		int [] S = new int [a];
+		int [] T = new int [b];
 		
+        
 		
-		//obtendo os elementos do B
-		for(int i = 0; i < 5; i++)
-		{
-			System.out.printf("VETOR B - índice nº %d = \n", i+1);
-			PB[i] = read.nextInt();
-		}
-		
+		//obtendo os elementos do S
 		for(int i = 0; i < 10; i++)
 		{
-			if(i < 5)
-			{
-				PC[i] = PA[aux];
-				aux++;
-			}
-			
-			if(i > 4)
-			{
-				PC[i] = PB[auxtwo];
-				auxtwo++;
-			}
+			System.out.printf("VETOR S - índice nº %d = \n", i+1);
+			S[i] = read.nextInt();	
 		}
+		
 		
 		//espaçamento
 		System.out.println(" ");
+		
+		
+		//obtendo os elementos do T
+		for(int i = 0; i < 15; i++)
+		{
+			System.out.printf("VETOR T - índice nº %d = \n", i+1);
+			T[i] = read.nextInt();
+		}
+		
+		int[] U = new int[a + b];
+		
+		while (j < S.length && k < T.length) {
+            U[m++] = S[j++];
+            U[m++] = T[k++];
+        }
+        while (j < S.length) {
+            U[m++] = S[j++];
+        }
+        while (k < T.length) {
+            U[m++] = T[k++];
+        }
+        
+        
+       
 
-       //exibindo o vetor PC
-		for(int i = 0; i < 10; i++)
+       //exibindo o vetor U
+		for(int i = 0; i < 25; i++)
 		{
-			System.out.printf("[%d] ", PC[i]);
+			System.out.printf("[%d] ", U[i]);
 		}
 	}
 }

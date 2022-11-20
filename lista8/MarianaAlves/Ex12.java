@@ -1,5 +1,5 @@
 /*
- * Ex10.java
+ * Ex12.java
  * 
  * Copyright 2022 Mariana Alves <Mariana Alves@DESKTOP-BDG0JMS>
  * 
@@ -23,26 +23,26 @@
 
 import java.util.Scanner;
 
-public class Ex10 {
+public class Ex12 {
 	
 	public static void main (String[] args) 
 	{
 		Scanner read = new Scanner (System.in);
 		
 		//criando vetores
-		int [] PA = new int [5];
-		int [] PB = new int [5];
-		int [] PC = new int [10];
+		int [] P = new int [10];
+		int [] Q = new int [15];
+		int [] R = new int [25];
 		
 		//variáveis
 		int aux = 0;
 		int auxtwo = 0;
 		
 		//obtendo os elementos do A
-		for(int i = 0; i < 5; i++)
+		for(int i = 0; i < 10; i++)
 		{
-			System.out.printf("VETOR A - índice nº %d = \n", i+1);
-			PA[i] = read.nextInt();	
+			System.out.printf("VETOR P - índice nº %d = \n", i+1);
+			P[i] = read.nextInt();	
 		}
 		
 		
@@ -51,23 +51,23 @@ public class Ex10 {
 		
 		
 		//obtendo os elementos do B
-		for(int i = 0; i < 5; i++)
+		for(int i = 0; i < 15; i++)
 		{
-			System.out.printf("VETOR B - índice nº %d = \n", i+1);
-			PB[i] = read.nextInt();
+			System.out.printf("VETOR Q - índice nº %d = \n", i+1);
+			Q[i] = read.nextInt();
 		}
 		
-		for(int i = 0; i < 10; i++)
+		for(int i = 0; i < 25; i++)
 		{
-			if(i < 5)
+			if(i < 10)
 			{
-				PC[i] = PA[aux];
+				R[i] = P[aux];
 				aux++;
 			}
 			
-			if(i > 4)
+			if(i > 9)
 			{
-				PC[i] = PB[auxtwo];
+				R[i] = Q[auxtwo];
 				auxtwo++;
 			}
 		}
@@ -75,10 +75,10 @@ public class Ex10 {
 		//espaçamento
 		System.out.println(" ");
 
-       //exibindo o vetor PC
-		for(int i = 0; i < 10; i++)
+       //exibindo o vetor R
+		for(int i = 0; i < 25; i++)
 		{
-			System.out.printf("[%d] ", PC[i]);
+			System.out.printf("[%d] ", R[i]);
 		}
 	}
 }

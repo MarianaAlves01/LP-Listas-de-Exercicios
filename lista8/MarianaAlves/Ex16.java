@@ -1,5 +1,5 @@
 /*
- * Ex10.java
+ * Ex16.java
  * 
  * Copyright 2022 Mariana Alves <Mariana Alves@DESKTOP-BDG0JMS>
  * 
@@ -23,63 +23,36 @@
 
 import java.util.Scanner;
 
-public class Ex10 {
-	
+public class Ex16 
+{	
 	public static void main (String[] args) 
 	{
 		Scanner read = new Scanner (System.in);
 		
-		//criando vetores
-		int [] PA = new int [5];
-		int [] PB = new int [5];
-		int [] PC = new int [10];
+		
+		System.out.print("Quantidade de termos da sequencia de Fibonacci: ");
+		int qtd = read.nextInt();
 		
 		//variáveis
-		int aux = 0;
-		int auxtwo = 0;
+		int a = 0, b = 1, aux = 0;
 		
-		//obtendo os elementos do A
-		for(int i = 0; i < 5; i++)
+		//criando vetor
+		int [] V = new int[qtd];
+		
+		for(int i = 0; i < qtd; i++)
 		{
-			System.out.printf("VETOR A - índice nº %d = \n", i+1);
-			PA[i] = read.nextInt();	
-		}
-		
-		
-		//espaçamento
-		System.out.println(" ");
-		
-		
-		//obtendo os elementos do B
-		for(int i = 0; i < 5; i++)
-		{
-			System.out.printf("VETOR B - índice nº %d = \n", i+1);
-			PB[i] = read.nextInt();
-		}
-		
-		for(int i = 0; i < 10; i++)
-		{
-			if(i < 5)
-			{
-				PC[i] = PA[aux];
-				aux++;
-			}
+			V[i] = a;
 			
-			if(i > 4)
-			{
-				PC[i] = PB[auxtwo];
-				auxtwo++;
-			}
+			aux = a;
+			a += b;
+			b = aux;
 		}
 		
-		//espaçamento
-		System.out.println(" ");
-
-       //exibindo o vetor PC
-		for(int i = 0; i < 10; i++)
+		for(int j = 0; j < V.length; j++)
 		{
-			System.out.printf("[%d] ", PC[i]);
+			System.out.printf("[%d] ", V[j]);
 		}
+		
 	}
 }
 
